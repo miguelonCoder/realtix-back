@@ -14,7 +14,12 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  app.enableCors()
+  app.enableCors({
+    origin: ['https://vercel.com', 'http://localhost:3000'], // Agrega todos los dominios permitidos
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    allowedHeaders: 'Content-Type, Accept, Authorization'
+  });
   
   await app.listen(3000);
 }
