@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+# NestJS service------------------------------------------------------
+  backend:
+    build: . 
+      
+    container_name: srd-backend
+    restart: always
+    ports:
+      - 8000:3000
+    networks:
+      - srd
+    volumes:
+      - ./app:/app
+networks:
+  realtix:
+    external: true
+    name: default-realtix
+# Volumes------------------------------------------------------
