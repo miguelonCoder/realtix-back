@@ -15,7 +15,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   app.enableCors({
-    origin: ['https://vercel.com', 'http://localhost:3000'], // Agrega todos los dominios permitidos
+    origin: ['https://vercel.com', 'http://localhost:3000', 'https://realtix-front-d4qymmm1v-develop411s-projects.vercel.app'], // Agrega todos los dominios permitidos
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     allowedHeaders: 'Content-Type, Accept, Authorization'
